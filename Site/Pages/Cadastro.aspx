@@ -21,14 +21,40 @@
                     Nome do Cliente: <br />
                    <asp:TextBox ID="txtNome" runat="server" placeholder="Nome Completo" Width="45%" CssClass="form-control" />
                    <br /> <br /> 
+                    <asp:RequiredFieldValidator 
+                        ID="requiredNome" 
+                        runat="server" 
+                        ControlToValidate="txtNome" 
+                        ErrorMessage="Preencha o nome corretamente"
+                        ForeColor="Red"
+                    />
 
                    Endereço do Cliente: <br />
                    <asp:TextBox ID="txtEndereco" runat="server" placeholder="Endereço do Cliente" Width="45%" CssClass="form-control" />
                    <br /> <br /> 
+                   <asp:RequiredFieldValidator 
+                        ID="RequiredEndereco" 
+                        runat="server" 
+                        ControlToValidate="txtEndereco" 
+                        ErrorMessage="Preencha o endereço corretamente"
+                        ForeColor="Red"
+                    />
+
 
                    E-mail do Cliente: <br />
                    <asp:TextBox ID="txtEmail" runat="server" placeholder="E-mail do Cliente" Width="45%" CssClass="form-control" />
                    <br /> <br /> 
+                   <asp:RequiredFieldValidator 
+                        ID="RequiredEmail" 
+                        runat="server" 
+                        ControlToValidate="txtEmail" 
+                        ErrorMessage="Preencha o e-mail corretamente"
+                        ForeColor="Red"
+                    />
+
+                    <asp:Button ID="btnCadastro" runat="server" Text="Cadastrar" CssClass="btn btn-success" />
+                    <a href="/default.aspx" class="btn btn-default"> Voltar</a>
+                    
                 </div>
             </div>
         </div>

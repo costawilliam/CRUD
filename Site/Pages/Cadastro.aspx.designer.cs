@@ -31,6 +31,15 @@ namespace Site.Pages {
         protected global::System.Web.UI.WebControls.TextBox txtNome;
         
         /// <summary>
+        /// Controle requiredNome.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredNome;
+        
+        /// <summary>
         /// Controle txtEndereco.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace Site.Pages {
         protected global::System.Web.UI.WebControls.TextBox txtEndereco;
         
         /// <summary>
+        /// Controle RequiredEndereco.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredEndereco;
+        
+        /// <summary>
         /// Controle txtEmail.
         /// </summary>
         /// <remarks>
@@ -47,5 +65,23 @@ namespace Site.Pages {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
+        
+        /// <summary>
+        /// Controle RequiredEmail.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredEmail;
+        
+        /// <summary>
+        /// Controle btnCadastro.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCadastro;
     }
 }
