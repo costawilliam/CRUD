@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using DAL.Model;
 using DAL.Persistence;
 
+// to do Add campo para senha
 namespace Site.Pages
 {
     public partial class Cadastro : System.Web.UI.Page
@@ -20,17 +21,18 @@ namespace Site.Pages
         {
             try
             {
-                Pessoa p = new Pessoa();
+                Usuario u = new Usuario();
 
-                p.Nome = txtNome.Text.Trim();
-                p.Endereco = txtEndereco.Text.Trim();
-                p.Email = txtEmail.Text.Trim();
+                u.Nome = txtNome.Text.Trim();
+                u.Endereco = txtEndereco.Text.Trim();
+                u.Email = txtEmail.Text.Trim();
+                u.Senha = txtSenha.Text.Trim();
 
-                PessoaDAL pDal = new PessoaDAL();
+                UsuarioDAL uDal = new UsuarioDAL();
 
-                pDal.Gravar(p);
+                uDal.Gravar(u);
 
-                lblMensagem.Text = "Pessoa " + p.Nome + " cadastrada com sucesso!";
+                lblMensagem.Text = "Usuario " + u.Nome + " cadastrada com sucesso!";
             }
             catch (Exception ex)
             {

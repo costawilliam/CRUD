@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Cadastro.aspx.cs" Inherits="Site.Pages.Cadastro" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CadastroUsuario.aspx.cs" Inherits="Site.Pages.Cadastro" %>
 
 <!DOCTYPE html>
 
@@ -15,11 +15,11 @@
         <div class="container">
             <div class="span10 offset1">
                 <div class="row">
-                    <h3 class="well">Cadastro de cliente</h3>
+                    <h3 class="well">Cadastro de Usuário</h3>
                     <br/>
 
-                    Nome do Cliente: <br />
-                   <asp:TextBox ID="txtNome" runat="server" placeholder="Nome Completo" Width="45%" CssClass="form-control" />
+                    Nome: <br />
+                   <asp:TextBox ID="txtNome" runat="server" placeholder="Preencha seu Nome Completo" Width="45%" CssClass="form-control" />
                    
                     <asp:RequiredFieldValidator 
                         ID="requiredNome" 
@@ -29,8 +29,8 @@
                         ForeColor="Red"
                     />
                     <br /> <br /> 
-                   Endereço do Cliente: <br />
-                   <asp:TextBox ID="txtEndereco" runat="server" placeholder="Endereço do Cliente" Width="45%" CssClass="form-control" />
+                   Endereço: <br />
+                   <asp:TextBox ID="txtEndereco" runat="server" placeholder="Preencha seu Endereço" Width="45%" CssClass="form-control" />
                    
                    <asp:RequiredFieldValidator 
                         ID="RequiredEndereco" 
@@ -42,14 +42,26 @@
                     <br /> <br /> 
 
 
-                   E-mail do Cliente: <br />
-                   <asp:TextBox ID="txtEmail" runat="server" placeholder="E-mail do Cliente" Width="45%" CssClass="form-control" />
+                   E-mail: <br />
+                   <asp:TextBox ID="txtEmail" runat="server" placeholder="Preencha seu e-mail" Width="45%" CssClass="form-control" />
                    
                    <asp:RequiredFieldValidator 
                         ID="RequiredEmail" 
                         runat="server" 
                         ControlToValidate="txtEmail" 
                         ErrorMessage="Preencha o e-mail corretamente"
+                        ForeColor="Red"
+                    />
+                    <br /> <br /> 
+
+                     Senha: <br />
+                   <asp:TextBox ID="txtSenha" runat="server" placeholder="Preencha sua senha" Width="45%" CssClass="form-control" type="password" />
+                   
+                   <asp:RequiredFieldValidator 
+                        ID="RequiredSenha" 
+                        runat="server" 
+                        ControlToValidate="txtSenha" 
+                        ErrorMessage="Preencha a senha corretamente"
                         ForeColor="Red"
                     />
                     <br /> <br /> 

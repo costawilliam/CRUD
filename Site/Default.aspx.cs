@@ -23,13 +23,13 @@ namespace Site
                 case "0": lblMensagem.Text = "Selecione uma opção válida";
                     break;
                 case "1":
-                    Response.Redirect("/Pages/Cadastro.aspx");
+                    Response.Redirect("/Pages/CadastroUsuario.aspx");
                     break;
                 case "2":
-                    Response.Redirect("/Pages/Consulta.aspx");
+                    Response.Redirect("/Pages/ConsultaUsuarios.aspx");
                     break;
                 case "3":
-                    Response.Redirect("/Pages/Detalhes.aspx");
+                    Response.Redirect("/Pages/DetalhesUsuarios.aspx");
                     break;
                 default:
                     lblMensagem.Text = "Selecione uma opção válida";

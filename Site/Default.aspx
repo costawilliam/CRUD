@@ -14,13 +14,13 @@
     <form id="form1" runat="server">
 
         <div class="jumbotron">
-            <h1> Projeto CRUD - Controle de Clientes</h1>
+            <h1> Projeto CRUD</h1>
             Selecione a operação desejada:
             <asp:DropDownList ID="ddlMenu" runat="server" >
                 <asp:ListItem Value="0" Text="- Escolha uma opção -" />
-                <asp:ListItem Value="1" Text="Cadastrar Cliente" />
-                <asp:ListItem Value="2" Text="Consultar Cliente" />
-                <asp:ListItem Value="3" Text="Obter os dados do Cliente" />
+                <asp:ListItem Value="1" Text="Cadastrar Usuário" />
+                <asp:ListItem Value="2" Text="Consultar Usuário" />
+                <asp:ListItem Value="3" Text="Obter os dados do Usuário" />
             </asp:DropDownList>
             <asp:Button ID="btnMenu" runat="server" Text ="Acessar" cssClass="btn btn-primary" OnClick="btnAcessar_Click"/>
             <p>

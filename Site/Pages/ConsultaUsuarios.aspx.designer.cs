@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Site {
+namespace Site.Pages {
     
     
-    public partial class Default {
+    public partial class Consulta {
         
         /// <summary>
         /// form1 control.
@@ -22,22 +22,13 @@ namespace Site {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// ddlMenu control.
+        /// dgListaPessoa control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlMenu;
-        
-        /// <summary>
-        /// btnMenu control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnMenu;
+        protected global::System.Web.UI.WebControls.GridView dgListaPessoa;
         
         /// <summary>
         /// lblMensagem control.

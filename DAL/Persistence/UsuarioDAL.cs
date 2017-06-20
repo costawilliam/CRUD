@@ -5,30 +5,27 @@ using System.Data.SqlClient;
 
 namespace DAL.Persistence
 {
-    public class PessoaDAL : Conexao
+    public class UsuarioDAL : Conexao
     {
         //Método para Gravar dados (INSERT)
-        public void Gravar(Pessoa p)
+        public void Gravar(Usuario u)
         {
             try
             {
-                //Abrir a conexão:
                 AbrirConexao();
 
-                //SqlCommand
-                Cmd = new SqlCommand("insert into pessoa(Nome,Endereco,Email) values(@v1, @v2,@v3)", Con);
+                Cmd = new SqlCommand("insert into usuario(Nome,Endereco,Email, Senha) values(@v1, @v2,@v3,@v4)", Con);
 
-                //Associa os valores ao SqlCommand
-                Cmd.Parameters.AddWithValue("@v1", p.Nome);
-                Cmd.Parameters.AddWithValue("@v2", p.Endereco);
-                Cmd.Parameters.AddWithValue("@v3", p.Email);
+                Cmd.Parameters.AddWithValue("@v1", u.Nome);
+                Cmd.Parameters.AddWithValue("@v2", u.Endereco);
+                Cmd.Parameters.AddWithValue("@v3", u.Email);
+                Cmd.Parameters.AddWithValue("@v4", u.Senha);
 
-                // Executa a query
                 Cmd.ExecuteNonQuery();  
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro ao gravar pessoa: " + ex.Message);
+                throw new Exception("Erro ao gravar usuário: " + ex.Message);
             }
             finally
             {
@@ -37,24 +34,24 @@ namespace DAL.Persistence
         }
 
         //Método para Atualizar dados (UPDATE)
-        public void Atualizar(Pessoa p)
+        public void Atualizar(Usuario u)
         {
             try
             {
                 AbrirConexao();
 
-                Cmd = new SqlCommand ("update pessoa set nome = @v1, endereco = @v2, email=@v3 where codigo = @v4", Con);
+                Cmd = new SqlCommand ("update usuario set nome = @v1, endereco = @v2, email=@v3 where codigo = @v4", Con);
 
-                Cmd.Parameters.AddWithValue("@v1", p.Nome);
-                Cmd.Parameters.AddWithValue("@v2", p.Endereco);
-                Cmd.Parameters.AddWithValue("@v3", p.Email);
-                Cmd.Parameters.AddWithValue("@v4", p.Codigo);
+                Cmd.Parameters.AddWithValue("@v1", u.Nome);
+                Cmd.Parameters.AddWithValue("@v2", u.Endereco);
+                Cmd.Parameters.AddWithValue("@v3", u.Email);
+                Cmd.Parameters.AddWithValue("@v4", u.Codigo);
 
-                Cmd.ExecuteNonQuery();  // Executa a query
+                Cmd.ExecuteNonQuery();  
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro ao atualizar pessoa:"  +ex.Message);
+                throw new Exception("Erro ao atualizar usuário:"  +ex.Message);
             }
             finally
             {
@@ -69,7 +66,7 @@ namespace DAL.Persistence
             {
                 AbrirConexao();
 
-                Cmd = new SqlCommand("delete from pessoa where Codigo = @v1", Con);
+                Cmd = new SqlCommand("delete from usuario where Codigo = @v1", Con);
 
                 Cmd.Parameters.AddWithValue("@v1", Codigo);
 
@@ -77,7 +74,7 @@ namespace DAL.Persistence
             }
             catch (Exception ex)
             {
-                throw new Exception("Erro ao excluir pessoa:" + ex.Message);
+                throw new Exception("Erro ao excluir usuário:" + ex.Message);
             }
             finally
             {
@@ -85,21 +82,21 @@ namespace DAL.Persistence
             }
         }
 
-        public Pessoa PesquisarPorCodigo(int Codigo)
+        public Usuario PesquisarPorCodigo(int Codigo)
         {
             try
             {
                 AbrirConexao();
 
-                Cmd = new SqlCommand("select * from pessoa where Codigo = @v1", Con);
+                Cmd = new SqlCommand("select * from usuario where Codigo = @v1", Con);
 
                 Cmd.Parameters.AddWithValue("@v1", Codigo);
 
-                Pessoa p = null; //cria um ponteiro
+                Usuario u = null; //cria um ponteiro
 
                 if (Dr.Read())
                 {
-                    p = new Pessoa()
+                    u = new Usuario()
                     {
                         Codigo = Convert.ToInt32(Dr["Codigo"]),
                         Nome = Convert.ToString(Dr["Nome"]),
@@ -107,14 +104,14 @@ namespace DAL.Persistence
                         Email = Convert.ToString(Dr["Email"])
                     };
                 }
-                return p;
+                return u;
 
                 
             }
             catch (Exception ex)
             {
 
-                throw new Exception("Erro ao pesquisar pessoa:" + ex.Message);
+                throw new Exception("Erro ao pesquisar usuário:" + ex.Message);
             }
             finally
             {
@@ -123,28 +120,28 @@ namespace DAL.Persistence
         }
 
         //Método listar pessoas (SELECT - sem WHERE)
-        public List<Pessoa> Listar()
+        public List<Usuario> Listar()
         {
             try
             {
                 AbrirConexao();
 
-                Cmd = new SqlCommand("select * from Pessoa", Con);
+                Cmd = new SqlCommand("select * from Usuario", Con);
 
                 Dr = Cmd.ExecuteReader(); // Executa consulta e lê os registros obtidos
 
-                List<Pessoa> lista = new List<Pessoa>(); //cria lista vazia
+                List<Usuario> lista = new List<Usuario>(); //cria lista vazia
 
                 while (Dr.Read())
                 {
-                    Pessoa p = new Pessoa()
+                    Usuario u = new Usuario()
                     {
                         Codigo = Convert.ToInt32(Dr["Codigo"]),
                         Nome = Convert.ToString(Dr["Nome"]),
                         Endereco = Convert.ToString(Dr["Endereco"]),
                         Email = Convert.ToString(Dr["Email"])
                     };
-                    lista.Add(p);
+                    lista.Add(u);
                 }
                 return lista;
 
@@ -152,7 +149,7 @@ namespace DAL.Persistence
             catch (Exception ex)
             {
 
-                throw new Exception("Erro ao listar pessoas:" + ex.Message);
+                throw new Exception("Erro ao listar usuários:" + ex.Message);
             }
             finally
             {
@@ -161,6 +158,3 @@ namespace DAL.Persistence
         }
     }
 }
-
-
-//Regras de Negócio da Aplicação - Consultas (insert,select, update e delete)

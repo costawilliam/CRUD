@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Consulta.aspx.cs" Inherits="Site.Pages.Consulta" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ConsultaUsuarios.aspx.cs" Inherits="Site.Pages.Consulta" %>
 
 <!DOCTYPE html>
 
@@ -15,7 +15,7 @@
  <div class="container">
             <div class="span10 offset1">
                 <div class="row">
-                    <h3 class="well">Consulta de cliente</h3>
+                    <h3 class="well">Consulta de Usuários</h3>
                     <br/>
 
                     <asp:GridView ID="dgListaPessoa" runat="server" CssClass="table table-hover table-striped" GridLines="None" AutoGenerateColumns="false" BackColor="#ccccff">

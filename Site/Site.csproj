@@ -67,6 +67,7 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Pages\CadastroAnimal.aspx" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
@@ -87,13 +88,13 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Default.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Pages\Cadastro.aspx" />
-    <Content Include="Pages\Consulta.aspx" />
+    <Content Include="Pages\CadastroUsuario.aspx" />
+    <Content Include="Pages\ConsultaUsuarios.aspx" />
     <Content Include="Pages\Content\bootstrap-theme.css" />
     <Content Include="Pages\Content\bootstrap-theme.min.css" />
     <Content Include="Pages\Content\bootstrap.css" />
     <Content Include="Pages\Content\bootstrap.min.css" />
-    <Content Include="Pages\Detalhes.aspx" />
+    <Content Include="Pages\DetalhesUsuarios.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -129,26 +130,33 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Cadastro.aspx.cs">
-      <DependentUpon>Cadastro.aspx</DependentUpon>
+    <Compile Include="Pages\CadastroAnimal.aspx.cs">
+      <DependentUpon>CadastroAnimal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Cadastro.aspx.designer.cs">
-      <DependentUpon>Cadastro.aspx</DependentUpon>
+    <Compile Include="Pages\CadastroAnimal.aspx.designer.cs">
+      <DependentUpon>CadastroAnimal.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Consulta.aspx.cs">
-      <DependentUpon>Consulta.aspx</DependentUpon>
+    <Compile Include="Pages\CadastroUsuario.aspx.cs">
+      <DependentUpon>CadastroUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Consulta.aspx.designer.cs">
-      <DependentUpon>Consulta.aspx</DependentUpon>
+    <Compile Include="Pages\CadastroUsuario.aspx.designer.cs">
+      <DependentUpon>CadastroUsuario.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Detalhes.aspx.cs">
-      <DependentUpon>Detalhes.aspx</DependentUpon>
+    <Compile Include="Pages\ConsultaUsuarios.aspx.cs">
+      <DependentUpon>ConsultaUsuarios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Detalhes.aspx.designer.cs">
-      <DependentUpon>Detalhes.aspx</DependentUpon>
+    <Compile Include="Pages\ConsultaUsuarios.aspx.designer.cs">
+      <DependentUpon>ConsultaUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DetalhesUsuarios.aspx.cs">
+      <DependentUpon>DetalhesUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\DetalhesUsuarios.aspx.designer.cs">
+      <DependentUpon>DetalhesUsuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
