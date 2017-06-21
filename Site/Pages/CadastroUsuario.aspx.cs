@@ -10,7 +10,7 @@ using DAL.Persistence;
 // to do Add campo para senha
 namespace Site.Pages
 {
-    public partial class Cadastro : System.Web.UI.Page
+    public partial class CadastroUsuario : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

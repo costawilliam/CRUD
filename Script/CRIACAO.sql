@@ -1,25 +1,6 @@
 ﻿Create database[CRUD]
 GO
 
-Create database[CRUD]
-GO
-
-CREATE TABLE [dbo].[Pessoa]
-(
-	[Codigo] INT NOT NULL PRIMARY KEY IDENTITY, 
-    [Nome] NVARCHAR(50) NOT NULL, 
-    [Endereco] NVARCHAR(50) NOT NULL, 
-    [Email] NCHAR(10) NOT NULL
-)
-
-
-select * from pessoa
-
-drop table pessoa
-
-Create database[CRUD]
-GO
-
 CREATE TABLE [dbo].[usuario]
 (
 	 [Codigo] INT NOT NULL PRIMARY KEY IDENTITY, 
@@ -64,11 +45,3 @@ ALTER TABLE interesse ADD CONSTRAINT
 	FK_anilam_interesse FOREIGN KEY (animal_codigo)
     REFERENCES animal (codigo)
 GO
-
-
-
-
-
-A ONG S.O.S bicho precisa de um portal para permitir o cadastramento de animais para adoção. 
-
-Para isso, deve ser criado um sistema que permita aos usuários cadastrar animais (nome, porte, espécie, raça – se tiver – , idade e fotos. Além disso, deve ser possível a consulta por animais (espécie, porte e/ou idade) e, em caso de interesse do usuário, registrar interesse na adoção.  

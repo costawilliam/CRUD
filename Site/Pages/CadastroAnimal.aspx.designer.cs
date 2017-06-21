@@ -10,7 +10,7 @@
 namespace Site.Pages {
     
     
-    public partial class Cadastro {
+    public partial class CadastroAnimal {
         
         /// <summary>
         /// form1 control.
