@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL.Model;
 using System.Data.SqlClient;
+using DAL.Model;
 
 namespace DAL.Persistence
 {
-    class InteresseDAL
+    public class InteresseDAL
     {
     }
 }

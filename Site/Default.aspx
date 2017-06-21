@@ -19,8 +19,12 @@
             <asp:DropDownList ID="ddlMenu" runat="server" >
                 <asp:ListItem Value="0" Text="- Escolha uma opção -" />
                 <asp:ListItem Value="1" Text="Cadastrar Usuário" />
-                <asp:ListItem Value="2" Text="Consultar Usuário" />
-                <asp:ListItem Value="3" Text="Obter os dados do Usuário" />
+                <asp:ListItem Value="2" Text="Listar Usuários" />
+                <asp:ListItem Value="3" Text="Consultar Usuário" />
+                <asp:ListItem Value="4" Text="Cadastrar Animal" />
+                <asp:ListItem Value="5" Text="Listar Animais" />
+                <asp:ListItem Value="6" Text="Consultar Animal" />
+
             </asp:DropDownList>
             <asp:Button ID="btnMenu" runat="server" Text ="Acessar" cssClass="btn btn-primary" OnClick="btnAcessar_Click"/>
             <p>

@@ -1,14 +1,11 @@
-﻿using System;
+﻿using DAL.Model;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DAL.Model;
 using System.Data.SqlClient;
 
 namespace DAL.Persistence
 {
-    class AnimalDAL : Conexao
+    public class AnimalDAL : Conexao
     {
         public void Gravar(Animal a)
         {
@@ -18,7 +15,7 @@ namespace DAL.Persistence
                 AbrirConexao();
 
                 //SqlCommand
-                Cmd = new SqlCommand("insert into animal(Nome, Porte, Especie, Racao, Idade, Usuario_codigo) values(@v1, @v2,@v3,@v4,@v5,@v4)", Con);
+                Cmd = new SqlCommand("insert into animal(Nome, Porte, Especie, Raca, Idade, Usuario_codigo) values(@v1, @v2, @v3, @v4, @v5, @v6)", Con);
 
                 //Associa os valores ao SqlCommand
                 Cmd.Parameters.AddWithValue("@v1", a.Nome);
@@ -54,7 +51,7 @@ namespace DAL.Persistence
                 Cmd.Parameters.AddWithValue("@v3", a.Especie);
                 Cmd.Parameters.AddWithValue("@v4", a.Raca);
                 Cmd.Parameters.AddWithValue("@v5", a.Idade);
-                Cmd.Parameters.AddWithValue("@v5", a.Codigo);
+                Cmd.Parameters.AddWithValue("@v6", a.Codigo);
 
 
                 Cmd.ExecuteNonQuery();  // Executa a query

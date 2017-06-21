@@ -71,7 +71,7 @@
 
                     <asp:Button ID="btnCadastro" runat="server" Text="Cadastrar" CssClass="btn btn-success" OnClick="btnCadastroCliente_Click" />
                     <a href="/default.aspx" class="btn btn-default"> Voltar</a>
-                    
+                    <br />
                 </div>
             </div>
         </div>

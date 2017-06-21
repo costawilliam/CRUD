@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CadastroAnimal.aspx.cs" Inherits="Site.Pages.Cadastro" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CadastroAnimal.aspx.cs" Inherits="Site.Pages.CadastroAnimal" %>
 
 <!DOCTYPE html>
 
@@ -76,7 +76,7 @@
 
                     <asp:Button ID="btnCadastroAnimal" runat="server" Text="Cadastrar" CssClass="btn btn-success" OnClick="btnCadastroAnimal_Click" />
                     <a href="/default.aspx" class="btn btn-default"> Voltar</a>
-                    
+                    <br />
                 </div>
             </div>
         </div>

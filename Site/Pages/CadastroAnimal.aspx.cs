@@ -21,11 +21,23 @@ namespace Site.Pages
         {
             try
             {
-               
+                Animal a = new Animal();
+                a.Nome = txtNomeAnimal.Text.Trim();
+                a.Porte = txtPorte.Text.Trim();
+                a.Especie = txtEspecie.Text.Trim();
+                a.Raca = txtRaca.Text.Trim();
+                a.Idade = Convert.ToInt32(txtIdade.Text.Trim());
+                a.Usuario_codigo = 1;
+
+                AnimalDAL aDal = new AnimalDAL();
+
+                aDal.Gravar(a);
+
+                lblMensagemAnimal.Text = "Animal " + a.Nome + " cadastrada com sucesso!";
             }
             catch (Exception ex)
             {
-
+                lblMensagemAnimal.Text = ex.Message;
             }
         }
 

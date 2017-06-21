@@ -3,7 +3,7 @@ GO
 
 CREATE TABLE [dbo].[usuario]
 (
-	 [Codigo] INT NOT NULL PRIMARY KEY IDENTITY, 
+	[Codigo] INT NOT NULL PRIMARY KEY IDENTITY, 
     [Nome] NVARCHAR(50) NOT NULL, 
     [Endereco] NVARCHAR(50) NOT NULL, 
     [Email] NVARCHAR(50) NOT NULL,
@@ -17,10 +17,10 @@ CREATE TABLE [dbo].[animal]
     [Nome] NVARCHAR(50) NOT NULL, 
     [Porte] NVARCHAR(50) NOT NULL, 
     [Especie] NVARCHAR(50) NOT NULL,       
-    [Racao] NVARCHAR(50) NOT NULL, 
-    [Idade] int NULL,
-    [Usuario_codigo] int NOT NULL,
-    [adotado] [bit] NOT NULL CONSTRAINT [DF_animal_adotado]  DEFAULT ((0))
+    [Raca] NVARCHAR(50) NOT NULL, 
+    [Idade] INT NULL,
+    [Usuario_codigo] INT NOT NULL,
+    [Adotado] [bit] NOT NULL CONSTRAINT [DF_animal_adotado]  DEFAULT ((0))
 )
 
 ALTER TABLE animal ADD CONSTRAINT
@@ -31,9 +31,9 @@ GO
 
 CREATE TABLE [dbo].[interesse]
 (
-	 [Codigo] INT NOT NULL PRIMARY KEY IDENTITY, 
-    [Usuario_codigo] int NOT NULL,
-    [Animal_codigo] int NOT NULL
+	[Codigo] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [Usuario_codigo] INT NOT NULL,
+    [Animal_codigo] INT NOT NULL
 )
 
 ALTER TABLE interesse ADD CONSTRAINT

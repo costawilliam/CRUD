@@ -31,6 +31,9 @@ namespace Site
                 case "3":
                     Response.Redirect("/Pages/DetalhesUsuarios.aspx");
                     break;
+                case "4":
+                    Response.Redirect("/Pages/CadastroAnimal.aspx");
+                    break;
                 default:
                     lblMensagem.Text = "Selecione uma opção válida";
                     break;

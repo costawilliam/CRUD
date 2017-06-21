@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DAL.Model
+﻿namespace DAL.Model
 {
-    class Interesse
+    public class Interesse
     {
         public int Codigo { get; set; }
         public int Usuario_codigo { get; set; }
