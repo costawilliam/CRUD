@@ -10,7 +10,7 @@
 namespace Site.Pages {
     
     
-    public partial class Consulta {
+    public partial class ConsultaAnimais {
         
         /// <summary>
         /// Controle form1.
@@ -22,21 +22,21 @@ namespace Site.Pages {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Controle dgListaPessoa.
+        /// Controle dgListaAnimais.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView dgListaPessoa;
+        protected global::System.Web.UI.WebControls.GridView dgListaAnimais;
         
         /// <summary>
-        /// Controle lblMensagem.
+        /// Controle lblMensagemAnimaisDetalhes.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMensagem;
+        protected global::System.Web.UI.WebControls.Label lblMensagemAnimaisDetalhes;
     }
 }

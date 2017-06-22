@@ -68,6 +68,7 @@
     <None Include="packages.config" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Pages\CadastroAnimal.aspx" />
+    <Content Include="Pages\ConsultaAnimais.aspx" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
@@ -143,6 +144,13 @@
     </Compile>
     <Compile Include="Pages\CadastroUsuario.aspx.designer.cs">
       <DependentUpon>CadastroUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ConsultaAnimais.aspx.cs">
+      <DependentUpon>ConsultaAnimais.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ConsultaAnimais.aspx.designer.cs">
+      <DependentUpon>ConsultaAnimais.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\ConsultaUsuarios.aspx.cs">
       <DependentUpon>ConsultaUsuarios.aspx</DependentUpon>

@@ -24,7 +24,6 @@
                 <asp:ListItem Value="4" Text="Cadastrar Animal" />
                 <asp:ListItem Value="5" Text="Listar Animais" />
                 <asp:ListItem Value="6" Text="Consultar Animal" />
-
             </asp:DropDownList>
             <asp:Button ID="btnMenu" runat="server" Text ="Acessar" cssClass="btn btn-primary" OnClick="btnAcessar_Click"/>
             <p>
