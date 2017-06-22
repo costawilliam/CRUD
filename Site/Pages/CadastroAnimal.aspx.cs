@@ -34,6 +34,8 @@ namespace Site.Pages
                 aDal.Gravar(a);
 
                 lblMensagemAnimal.Text = "Animal " + a.Nome + " cadastrada com sucesso!";
+
+
             }
             catch (Exception ex)
             {
