@@ -19,7 +19,7 @@ namespace DAL.Persistence
                // Con = new SqlConnection("Data Source=.\\sqlexpress;Initial Catalog=CRUD;Persist Security Info=True;User ID=sa;Password=*******");
                 Con.Open();
             }
-            catch (Exception exzWUEwToAahE4ENAjqPeVmrgdnWkJieBaKBGJvzgutyfYtWFmQhRmgjohPQrGHLr4
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
