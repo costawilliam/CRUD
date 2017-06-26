@@ -7,6 +7,7 @@ namespace DAL.Persistence
 {
     public class UsuarioDAL : Conexao
     {
+        public int Codigo { get; set; }
         //Método para Gravar dados (INSERT)
         public void Gravar(Usuario u)
         {
@@ -118,6 +119,47 @@ namespace DAL.Persistence
                 FecharConexao();
             }
         }
+
+
+
+        public List<Usuario> Login(string email, string senha)
+        {
+            try
+            {
+                AbrirConexao();
+
+                Cmd = new SqlCommand("select codigo from usuario where email = @v1 and senha = @v2", Con);
+                Cmd.Parameters.AddWithValue("@v1", email);
+                Cmd.Parameters.AddWithValue("@v2", senha);
+
+                Dr = Cmd.ExecuteReader(); 
+
+                List<Usuario> lista = new List<Usuario>();
+
+                while (Dr.Read())
+                {
+                    Usuario u = new Usuario()
+                    {
+                        Codigo = Convert.ToInt32(Dr["Codigo"])
+                    };
+                    lista.Add(u);
+                }
+                return lista;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Erro ao consultar usuário:" + ex.Message);
+            }
+            finally
+            {
+                FecharConexao();
+            }
+        }
+
+
+
 
         //Método listar pessoas (SELECT - sem WHERE)
         public List<Usuario> Listar()

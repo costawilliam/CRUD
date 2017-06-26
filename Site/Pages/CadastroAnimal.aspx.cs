@@ -43,6 +43,9 @@ namespace Site.Pages
             }
         }
 
-
+        protected void btnFoto_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

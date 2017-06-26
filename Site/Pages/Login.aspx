@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ConsultaUsuarios.aspx.cs" Inherits="Site.Pages.Consulta" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Site.Pages.Login" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Cadastro</title>
+    <title>Login</title>
     <link type="text/css" rel="stylesheet" href="Content/bootstrap.css" />
 </head>
     <script src="Scripts/jquery-1.9.1.min.js"> </script>
@@ -30,37 +30,51 @@
 				    <li><a href="/Pages/ConsultaUsuarios.aspx">Listar Usuários</a></li>
 				    <li><a href="/Pages/CadastroAnimal.aspx">Cadastrar Animal</a></li>
 				    <li><a href="/Pages/ConsultaAnimais.aspx">Listar Animais</a></li>
-				    <li><a href="/Pages/Login.aspx">Login</a></li>
+				    <li><a href="#">Login</a></li>
 			    </ul>
 		    </div>	
 	    </div>
-    </nav> 
+    </nav>
     <br/>
-    <br />
+    <br/>
+
     <form id="form1" runat="server">
- <div class="container">
+        <div class="container">
             <div class="span10 offset1">
                 <div class="row">
-                    <h3 class="well">Consulta de Usuários</h3>
+                    <h3 class="well">Efetuar Login</h3>
                     <br/>
-
-                    <asp:GridView ID="dgListaPessoa" runat="server" CssClass="table table-hover table-striped" GridLines="None" AutoGenerateColumns="false" BackColor="#ccccff">
-                        <Columns>
-                            <asp:BoundField DataField="Codigo" HeaderText="Código" />
-                            <asp:BoundField DataField="Nome" HeaderText="Nome" />
-                            <asp:BoundField DataField="Endereco" HeaderText="Endereço" />
-                            <asp:BoundField DataField="Email" HeaderText="E-mail" />
-                        </Columns>
-                        <RowStyle CssClass="cursor-pointer" />
-
-                    </asp:GridView>
-
+                   E-mail: <br />
+                   <asp:TextBox ID="txtEmailLogin" runat="server" placeholder="Preencha seu e-mail" Width="45%" CssClass="form-control" />
+                   
+                   <asp:RequiredFieldValidator 
+                        ID="RequiredEmailLogin" 
+                        runat="server" 
+                        ControlToValidate="txtEmailLogin" 
+                        ErrorMessage="Preencha o e-mail corretamente"
+                        ForeColor="Red"
+                    />
                     <br /> <br /> 
+
+                     Senha: <br />
+                   <asp:TextBox ID="txtSenhaLogin" runat="server" placeholder="Preencha sua senha" Width="45%" CssClass="form-control" type="password" />
+                
+                   <asp:RequiredFieldValidator 
+                        ID="RequiredSenhaLogin" 
+                        runat="server" 
+                        ControlToValidate="txtSenhaLogin" 
+                        ErrorMessage="Preencha a senha corretamente"
+                        ForeColor="Red"
+                    />
+                    <br /> <br /> 
+                    
                     <p>
-                        <asp:Label ID="lblMensagem" runat="server" />
+                        <asp:Label ID="lblMensagemLogin" runat="server" />
                     </p>
+
+                    <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn btn-success" OnClick="btnLogin_Click" />
                     <a href="/default.aspx" class="btn btn-default"> Voltar</a>
-                    <br /> 
+                    <br />
                 </div>
             </div>
         </div>

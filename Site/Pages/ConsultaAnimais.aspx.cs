@@ -11,10 +11,10 @@ namespace Site.Pages
             try
             {
                 AnimalDAL aDAL = new AnimalDAL();
+                Login l = new Login();
 
                 dgListaAnimais.DataSource = aDAL.Listar();
                 dgListaAnimais.DataBind();
-
             }
             catch (Exception ex)
             {

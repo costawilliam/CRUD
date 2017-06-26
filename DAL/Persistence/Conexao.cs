@@ -15,7 +15,7 @@ namespace DAL.Persistence
         {
             try
             {
-                Con = new SqlConnection("Data Source=b0313095-5cea-43b4-9981-a79a001165fd.sqlserver.sequelizer.com;Initial Catalog=dbb03130955cea43b49981a79a001165fd;Persist Security Info=True;User ID=covcyvsbvehyweyl;Password=***********");
+                Con = new SqlConnection("Data Source=6884efda-c112-4f4d-abbc-a796013a0339.sqlserver.sequelizer.com;Initial Catalog=db6884efdac1124f4dabbca796013a0339;Persist Security Info=True;User ID=lmjwtbzohgkiqnsw;Password=2XSmCn2Y5jU3ddzNgqF7dSYerjGqerHFvxX855Gj6iAH4QvStymkHVuh7M4sMJTL");
                // Con = new SqlConnection("Data Source=.\\sqlexpress;Initial Catalog=CRUD;Persist Security Info=True;User ID=sa;Password=*******");
                 Con.Open();
             }

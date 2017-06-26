@@ -103,6 +103,24 @@ namespace Site.Pages {
         protected global::System.Web.UI.WebControls.TextBox txtIdade;
         
         /// <summary>
+        /// Controle txtFoto.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFoto;
+        
+        /// <summary>
+        /// Controle btnFoto.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnFoto;
+        
+        /// <summary>
         /// Controle lblMensagemAnimal.
         /// </summary>
         /// <remarks>
