@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DAL.Model;
 using DAL.Persistence;
+using System.IO;
 
 // to do Add campo para senha
 namespace Site.Pages
@@ -19,9 +20,13 @@ namespace Site.Pages
 
         protected void btnCadastroAnimal_Click(object sender, EventArgs e)
         {
+
             try
             {
-                Animal a = new Animal();
+                byte[] imageBytes;
+
+               Animal a = new Animal();
+                AnimalDAL aDal = new AnimalDAL();
                 a.Nome = txtNomeAnimal.Text.Trim();
                 a.Porte = txtPorte.Text.Trim();
                 a.Especie = txtEspecie.Text.Trim();
@@ -29,9 +34,38 @@ namespace Site.Pages
                 a.Idade = Convert.ToInt32(txtIdade.Text.Trim());
                 a.Usuario_codigo = 1;
 
-                AnimalDAL aDal = new AnimalDAL();
+                if (meuArquivo.PostedFile == null || string.IsNullOrEmpty(meuArquivo.PostedFile.FileName) || meuArquivo.PostedFile.InputStream == null)
+                {
+                    aDal.Gravar(a);
+                   
+                }
+                else
+                {
+                    string extensao = Path.GetExtension(meuArquivo.PostedFile.FileName).ToLower();
+                    string tipoArquivo = null;
 
-                aDal.Gravar(a);
+                    switch (extensao)
+                    {
+                        case ".gif":
+                            tipoArquivo = "image/gif";
+                            break;
+                        case ".jpg":
+                        case ".jpeg":
+                        case ".jpe":
+                            tipoArquivo = "image/jpeg";
+                            break;
+                        default:
+                            lblMensagemAnimal.Text = "Erro - tipo de arquivo inválido";
+                            return;
+                    }
+
+                    imageBytes = new byte[meuArquivo.PostedFile.InputStream.Length + 1];
+                    meuArquivo.PostedFile.InputStream.Read(imageBytes, 0, imageBytes.Length);
+                    a.Imagem = imageBytes;
+                    a.Imagem_tipo = tipoArquivo;
+                    aDal.GravarComFoto(a);
+                    
+                }
 
                 lblMensagemAnimal.Text = "Animal " + a.Nome + " cadastrada com sucesso!";
 

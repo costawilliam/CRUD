@@ -37,7 +37,7 @@
     </nav> 
     <br/>
     <br />
-    <form id="form1" runat="server">
+    <form id="form1" method="post" runat="server" enctype="multipart/form-data">
         <div class="container">
             <div class="span10 offset1">
                 <div class="row">
@@ -95,18 +95,18 @@
                     Idade: <br />
                    <asp:TextBox ID="txtIdade" runat="server" placeholder="Preencha seu Nome Completo" Width="45%" CssClass="form-control" />
                    <br /> <br /> 
-                    Foto: <br />
-                    <asp:TextBox ID="txtFoto" runat="server" Width="45%" CssClass="form-control" /> 
-                    <br />
-                    <asp:Button  ID="btnFoto" Text="Selecionar Arquivo" runat="server" CssClass="btn btn-default"  OnClick="btnFoto_Click"/>
-                     <br />
-                    <p>
-                        <asp:Label ID="lblMensagemAnimal" runat="server" />
-                    </p>
+                   Foto: <br />
+                    <input id="meuArquivo" type="file" runat="server"/>
+                    <br /> <br /> 
+
+                   
 
                     <asp:Button ID="btnCadastroAnimal" runat="server" Text="Cadastrar" CssClass="btn btn-success" OnClick="btnCadastroAnimal_Click" />
                     <a href="/default.aspx" class="btn btn-default"> Voltar</a>
                     <br />
+                     <p>
+                        <asp:Label ID="lblMensagemAnimal" runat="server" />
+                    </p>
                 </div>
             </div>
         </div>

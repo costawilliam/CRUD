@@ -9,6 +9,8 @@
         public string Raca { get; set; }
         public int Idade { get; set; }
         public int Usuario_codigo { get; set; }
+        public byte[] Imagem { get; set; }
+        public string Imagem_tipo { get; set; }
     }
 }
 

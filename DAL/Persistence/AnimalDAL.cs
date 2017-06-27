@@ -7,7 +7,7 @@ namespace DAL.Persistence
 {
     public class AnimalDAL : Conexao
     {
-        public void Gravar(Animal a)
+        public void GravarComFoto(Animal a)
         {
             try
             {
@@ -15,7 +15,7 @@ namespace DAL.Persistence
                 AbrirConexao();
 
                 //SqlCommand
-                Cmd = new SqlCommand("insert into animal(Nome, Porte, Especie, Raca, Idade, Usuario_codigo) values(@v1, @v2, @v3, @v4, @v5, @v6)", Con);
+                Cmd = new SqlCommand("insert into animal(Nome, Porte, Especie, Raca, Idade, Usuario_codigo, Imagem, ImagemTipo) values(@v1, @v2, @v3, @v4, @v5, @v6, @v7, @v8)", Con);
 
                 //Associa os valores ao SqlCommand
                 Cmd.Parameters.AddWithValue("@v1", a.Nome);
@@ -24,6 +24,40 @@ namespace DAL.Persistence
                 Cmd.Parameters.AddWithValue("@v4", a.Raca);
                 Cmd.Parameters.AddWithValue("@v5", a.Idade);
                 Cmd.Parameters.AddWithValue("@v6", a.Usuario_codigo);
+                Cmd.Parameters.AddWithValue("@v7", a.Imagem);
+                Cmd.Parameters.AddWithValue("@v8", a.Imagem_tipo);
+
+                // Executa a query
+                Cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao gravar Animal: " + ex.Message);
+            }
+            finally
+            {
+                FecharConexao();
+            }
+        }
+
+        public void Gravar(Animal a)
+        {
+            try
+            {
+                //Abrir a conexão:
+                AbrirConexao();
+
+                //SqlCommand
+                Cmd = new SqlCommand("insert into animal(Nome, Porte, Especie, Raca, Idade, Usuario_codigo, Imagem, ImagemTipo) values(@v1, @v2, @v3, @v4, @v5, @v6)", Con);
+
+                //Associa os valores ao SqlCommand
+                Cmd.Parameters.AddWithValue("@v1", a.Nome);
+                Cmd.Parameters.AddWithValue("@v2", a.Porte);
+                Cmd.Parameters.AddWithValue("@v3", a.Especie);
+                Cmd.Parameters.AddWithValue("@v4", a.Raca);
+                Cmd.Parameters.AddWithValue("@v5", a.Idade);
+                Cmd.Parameters.AddWithValue("@v6", a.Usuario_codigo);
+
 
                 // Executa a query
                 Cmd.ExecuteNonQuery();
@@ -78,6 +112,38 @@ namespace DAL.Persistence
                 Cmd.Parameters.AddWithValue("@v1", codigo);           
 
                 Cmd.ExecuteNonQuery();  
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao atualizar animal:" + ex.Message);
+            }
+            finally
+            {
+                FecharConexao();
+            }
+        }
+
+        public List<Animal> RetornaMaxID()
+        {
+            try
+            {
+                AbrirConexao();
+
+                Cmd = new SqlCommand("select max(Codigo) as Codigo from animal", Con);
+                Dr = Cmd.ExecuteReader();
+                List<Animal> lista = new List<Animal>(); //cria lista vazia
+
+
+                while (Dr.Read())
+                {
+                    Animal a = new Animal()
+                    {
+                        Codigo = Convert.ToInt32(Dr["Codigo"])
+                        
+                    };
+                    lista.Add(a);
+                }
+                return lista;
             }
             catch (Exception ex)
             {
